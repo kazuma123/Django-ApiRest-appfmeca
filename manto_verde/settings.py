@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'users',
     'equipos',
     'fmeca',
+    'proyecto',
+    'equipos_completos'
 ]
 
 REST_FRAMEWORK = {
@@ -90,10 +92,10 @@ WSGI_APPLICATION = 'manto_verde.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd24a923fd5qlra',
-        'USER': 'dhvejychiccqpf',
-        'PASSWORD': 'd333bcf52ccff51d4866b913dd6733a32b9a9cc18f8a1099597c7d0cbff1e379',
-        'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
+        'NAME': 'd36r29atpscn52',
+        'USER': 'zzpbyidwhrfkli',
+        'PASSWORD': '113aa05de72643d1e19fe7b4a735f6209255488e74dcbf1946376dc124345827',
+        'HOST': 'ec2-44-196-174-238.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }

@@ -4,7 +4,7 @@ from equipos.models import Equipo
 
 # Create your models here.
 class FMeca(models.Model):
-    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, null=False, blank=False)
+    equipo = models.ForeignKey(Equipo, related_name='fallas_equipo', on_delete=models.CASCADE)
     ds_modo_falla = models.CharField(max_length=255)
     ds_efecto_falla = models.CharField(max_length=255)
     descripcion_tarea = models.TextField()
