@@ -4,7 +4,7 @@ from area.models import Area
 
 # Create your models here.
 class Equipo(models.Model):
-    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    area = models.ManyToManyField(Area)
     machine_type = models.CharField(max_length=255)
     descripcion = models.CharField(max_length=255)
     funcion = models.TextField()
