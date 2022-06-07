@@ -4,7 +4,7 @@ from area.models import Area
 
 # Create your models here.
 class Equipo(models.Model):
-    area = models.ManyToManyField(Area)
+    area = models.ManyToManyField(Area, related_name="machine_list")
     machine_type = models.CharField(max_length=255)
     descripcion = models.CharField(max_length=255)
     funcion = models.TextField()
@@ -14,3 +14,6 @@ class Equipo(models.Model):
 
     def __str__(self):
         return self.machine_type
+
+    def get_equipos(self):
+        return "\n".join([p.nombre for p in self.area.all()])
