@@ -7,5 +7,3 @@ from area.models import Area
 class AreaAdmin(admin.ModelAdmin):
     list_display = ['get_proyects','nombre', 'created_at']
 
-class AreaAdmin(admin.ModelAdmin):
-    list_display = ['get_proyects','nombre', 'created_at']

@@ -5,5 +5,5 @@ from equipos.models import Equipo
 # Register your models here.
 @admin.register(Equipo)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['get_equipos','machine_type', 'descripcion', 'funcion', 'created_at']
+    list_display = ['get_areas','machine_type', 'descripcion', 'funcion', 'created_at']
 

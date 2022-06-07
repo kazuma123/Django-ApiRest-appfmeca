@@ -15,5 +15,5 @@ class Equipo(models.Model):
     def __str__(self):
         return self.machine_type
 
-    def get_equipos(self):
+    def get_areas(self):
         return "\n".join([p.nombre for p in self.area.all()])

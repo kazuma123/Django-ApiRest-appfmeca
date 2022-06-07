@@ -14,5 +14,5 @@ class AreaEquiposSerializer(serializers.ModelSerializer):
     machine_list = EquiposSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Equipo
+        model = Area
         fields = ['id', 'nombre', 'machine_list']
