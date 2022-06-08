@@ -47,7 +47,7 @@ urlpatterns = [
     path('api/', include(fmeca_route.urls)),
     path('api/', include(equipo_route.urls)),
     path('api/', include(area_route.urls)),
-    #path('api/', include(equipos_completos_route.urls)),
+    path('api/', include(equipos_completos_route.urls)),
     path('api/',include('equipos.urls'))
 ]
 
