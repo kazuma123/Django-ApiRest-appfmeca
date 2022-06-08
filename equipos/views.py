@@ -3,19 +3,26 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from equipos.serializers import EquiposSerializer
+from equipos.serializers import EquiposSerializer, EquipoFmecaSerializer
 from fmeca.serializers import FmecaSerializer
 from equipos.models import Equipo
-from fmeca.models import FMeca
+from fmeca.models import FMeca, EquipoFmeca
 from equipos.permission import IsAdminOrReadOnly
 from rest_framework import permissions
 # Create your views here.
 from django.http import JsonResponse
 
+
 class EquipoViewSet(ModelViewSet):
     #permission_classes = [IsAdminOrReadOnly]
     serializer_class = EquiposSerializer
     queryset = Equipo.objects.all()
+
+
+class EquipoFmecaViewSet(ModelViewSet):
+    #permission_classes = [IsAdminOrReadOnly]
+    serializer_class = EquipoFmecaSerializer
+    queryset = EquipoFmeca.objects.all()
 
 
 class EquiposFallasDetails(APIView):

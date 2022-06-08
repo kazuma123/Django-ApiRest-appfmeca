@@ -3,6 +3,7 @@ from rest_framework.viewsets import ModelViewSet
 from area.serializers import AreaSerializer, AreaEquiposSerializer
 from equipos.serializers import EquiposSerializer
 from area.models import Area
+from equipos.models import AreaEquipo
 from equipos.models import Equipo
 from equipos.permission import IsAdminOrReadOnly
 # Create your views here.
@@ -16,4 +17,4 @@ class AreaViewSet(ModelViewSet):
 class AreaEquiposViewSet(ModelViewSet):
     #permission_classes = [IsAdminOrReadOnly]
     serializer_class = AreaEquiposSerializer
-    queryset = Area.objects.all()
+    queryset = AreaEquipo.objects.all()

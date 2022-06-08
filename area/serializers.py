@@ -4,6 +4,7 @@ from equipos.models import AreaEquipo
 
 from equipos.serializers import EquiposSerializer
 
+
 class AreaSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -12,8 +13,8 @@ class AreaSerializer(serializers.ModelSerializer):
 
 
 class AreaEquiposSerializer(serializers.ModelSerializer):
-    machine_list = EquiposSerializer(many=True, read_only=True)
-    area_list = AreaSerializer(many=True, read_only=True)
+    #machine_list = EquiposSerializer(many=True, read_only=True)
+    #area_list = AreaSerializer(many=True, read_only=True)
     class Meta:
         model = AreaEquipo
-        fields = ['id','area_id', 'equipo_id','created_at', 'area_list','machine_list']
+        fields = '__all__'
