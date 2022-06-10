@@ -4,6 +4,8 @@ from area.models import Area
 # Create your models here.
 class Equipo(models.Model):
     area = models.ManyToManyField(Area, related_name="machine_list", through="AreaEquipo")
+    nombre = models.CharField(max_length=255, blank=True)
+    codigo = models.CharField(max_length=255, blank=True)
     machine_type = models.CharField(max_length=255)
     descripcion = models.CharField(max_length=255)
     funcion = models.TextField()
