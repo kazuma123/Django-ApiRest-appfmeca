@@ -9,7 +9,7 @@ class EquiposSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Equipo
-        fields = ['id', 'machine_type', 'descripcion', 'funcion', 'falla_funcion', 'created_at', 'fallas_equipo']
+        fields = '__all__'
 
 
 class EquipoFmecaSerializer(serializers.ModelSerializer):
