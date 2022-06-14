@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from fmeca.serializers import FmecaSerializer, MaquinaFmecaSerializer
-from fmeca.models import FMeca, MaquinaFmeca
+from fmeca.serializers import FmecaSerializer
+from fmeca.models import FMeca
 from fmeca.permission import IsAdminOrReadOnly
 # Create your views here.
 
@@ -12,7 +12,7 @@ class FmecaViewSet(ModelViewSet):
     queryset = FMeca.objects.all()
 
 
-class MaquinaFmecaViewSet(ModelViewSet):
-    #permission_classes = [IsAdminOrReadOnly]
-    serializer_class = MaquinaFmecaSerializer
-    queryset = MaquinaFmeca.objects.all()
+# class MaquinaFmecaViewSet(ModelViewSet):
+#     #permission_classes = [IsAdminOrReadOnly]
+#     serializer_class = MaquinaFmecaSerializer
+#     queryset = MaquinaFmeca.objects.all()

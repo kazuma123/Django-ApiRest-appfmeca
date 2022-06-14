@@ -4,6 +4,7 @@ from maquina.models import Maquina
 
 # Create your models here.
 class FMeca(models.Model):
+    maquina = models.ForeignKey(Maquina, on_delete=models.CASCADE, related_name="fmeca_list")
     ds_modo_falla = models.CharField(max_length=255)
     ds_efecto_falla = models.CharField(max_length=255)
     descripcion_tarea = models.TextField()
@@ -14,8 +15,8 @@ class FMeca(models.Model):
         return self.ds_efecto_falla
 
 
-class MaquinaFmeca(models.Model):
-    maquina_id = models.ForeignKey(Maquina, on_delete=models.CASCADE)
-    fmeca_id = models.ForeignKey(FMeca, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+# class MaquinaFmeca(models.Model):
+#     maquina_id = models.ForeignKey(Maquina, on_delete=models.CASCADE)
+#     fmeca_id = models.ForeignKey(FMeca, on_delete=models.CASCADE)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)

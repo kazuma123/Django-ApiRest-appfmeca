@@ -11,7 +11,7 @@ class Equipo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.machine_type
+        return self.nombre
 
     def get_areas(self):
         return "\n".join([p.nombre for p in self.area.all()])
