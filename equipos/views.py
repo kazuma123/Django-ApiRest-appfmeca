@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from equipos.serializers import EquiposSerializer, EquipoFmecaSerializer
 from fmeca.serializers import FmecaSerializer
 from equipos.models import Equipo
-from fmeca.models import FMeca, EquipoFmeca
+from fmeca.models import FMeca, MaquinaFmeca
 from equipos.permission import IsAdminOrReadOnly
 from rest_framework import permissions
 # Create your views here.
@@ -19,10 +19,10 @@ class EquipoViewSet(ModelViewSet):
     queryset = Equipo.objects.all()
 
 
-class EquipoFmecaViewSet(ModelViewSet):
+class MaquinaFmecaViewSet(ModelViewSet):
     #permission_classes = [IsAdminOrReadOnly]
     serializer_class = EquipoFmecaSerializer
-    queryset = EquipoFmeca.objects.all()
+    queryset = MaquinaFmeca.objects.all()
 
 
 class EquiposFallasDetails(APIView):

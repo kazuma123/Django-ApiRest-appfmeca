@@ -9,32 +9,31 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('proyecto', '0001_initial'),
+        ('equipos', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Area',
+            name='Maquina',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombre', models.CharField(max_length=255)),
+                ('codigo', models.CharField(blank=True, max_length=255)),
+                ('machine_type', models.CharField(blank=True, max_length=255)),
+                ('descripcion', models.CharField(blank=True, max_length=255)),
+                ('funcion_equipo', models.CharField(blank=True, max_length=255)),
+                ('falla_funcion', models.CharField(blank=True, max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
             ],
         ),
         migrations.CreateModel(
-            name='ProyectoArea',
+            name='EquipoMaquina',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('area_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='area.area')),
-                ('proyecto_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='proyecto.proyecto')),
+                ('equipo_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='equipos.equipo')),
+                ('maquina_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='maquina.maquina')),
             ],
-        ),
-        migrations.AddField(
-            model_name='area',
-            name='proyecto',
-            field=models.ManyToManyField(related_name='area_list', through='area.ProyectoArea', to='proyecto.proyecto'),
         ),
     ]

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from equipos.models import Equipo
-from fmeca.models import EquipoFmeca
+from fmeca.models import MaquinaFmeca
 from fmeca.serializers import FmecaSerializer
 
 
@@ -17,5 +17,5 @@ class EquipoFmecaSerializer(serializers.ModelSerializer):
     #equipo_list = EquiposSerializer(many=True, read_only=True)
 
     class Meta:
-        model = EquipoFmeca
+        model = MaquinaFmeca
         fields ='__all__'

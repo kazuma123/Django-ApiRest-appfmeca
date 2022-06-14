@@ -9,7 +9,7 @@ class AreaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Area
-        fields = ['id', 'nombre', 'created_at']
+        fields = '__all__'
 
 
 class AreaEquiposSerializer(serializers.ModelSerializer):

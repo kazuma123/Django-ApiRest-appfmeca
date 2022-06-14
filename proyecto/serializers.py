@@ -8,13 +8,13 @@ class ProyectoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Proyecto
-        fields = ['id', 'nombre', 'descripcion', 'created_at']
+        fields = '__all__'
 
 
 class ProyectoAreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProyectoArea
-        fields = ['id','proyecto_id']
+        fields = '__all__'
 
 
 # class ProyectoAreaModelSerializer(serializers.ModelSerializer):

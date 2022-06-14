@@ -1,10 +1,9 @@
 from django.db import models
-from equipos.models import Equipo
+from maquina.models import Maquina
 
 
 # Create your models here.
 class FMeca(models.Model):
-    equipo = models.ManyToManyField(Equipo, related_name='fallas_equipo', through="EquipoFmeca")
     ds_modo_falla = models.CharField(max_length=255)
     ds_efecto_falla = models.CharField(max_length=255)
     descripcion_tarea = models.TextField()
@@ -15,8 +14,8 @@ class FMeca(models.Model):
         return self.ds_efecto_falla
 
 
-class EquipoFmeca(models.Model):
-    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+class MaquinaFmeca(models.Model):
+    maquina_id = models.ForeignKey(Maquina, on_delete=models.CASCADE)
     fmeca_id = models.ForeignKey(FMeca, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'equipos',
     'fmeca',
     'proyecto',
-    'equipos_completos'
+    'equipos_completos',
+    'maquina'
 ]
 
 REST_FRAMEWORK = {
