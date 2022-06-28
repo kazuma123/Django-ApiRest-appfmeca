@@ -15,6 +15,6 @@ class Proyecto(models.Model):
 
 
 class ProyectoEquiposFallas(models.Model):
-    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
-    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
-    falla = models.ForeignKey(Falla, on_delete=models.CASCADE)
+    proyecto_id = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
+    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+    falla_id = models.ForeignKey(Falla, on_delete=models.CASCADE)

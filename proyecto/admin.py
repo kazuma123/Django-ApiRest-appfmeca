@@ -11,4 +11,4 @@ class ProyectoAdmin(admin.ModelAdmin):
 # Register your models here.
 @admin.register(ProyectoEquiposFallas)
 class MaquinaAdmin(admin.ModelAdmin):
-    list_display = ['proyecto','equipo', 'falla']
+    list_display = ['proyecto_id','equipo_id', 'falla_id']
