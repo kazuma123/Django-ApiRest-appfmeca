@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from proyecto.models import Proyecto
-from area.serializers import AreaSerializer
-from area.models import ProyectoArea
+from proyecto.models import ProyectoEquiposFallas
+from equipo.serializers import EquiposSerializer
+from falla.serializers import FmecaSerializer
 
 
 class ProyectoSerializer(serializers.ModelSerializer):
@@ -11,25 +12,26 @@ class ProyectoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProyectoAreaSerializer(serializers.ModelSerializer):
+class ProyectoEquiposFallasSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = ProyectoArea
+        model = ProyectoEquiposFallas
         fields = '__all__'
 
 
-# class ProyectoAreaModelSerializer(serializers.ModelSerializer):
-#     area_list = AreaSerializer(many=True, read_only=True)
-#     proyecto_area = ProyectoAreaSerializer(source="proyectoarea_set", many=True)
-#
-#     class Meta:
-#         model = Proyecto
-#         fields = ['id','nombre','descripcion','area_list','proyecto_area']
-
-class ProyectoAreaModelSerializer(serializers.ModelSerializer):
-    #proyecto = ProyectoSerializer(read_only=True)
-    #proyecto_area = ProyectoAreaSerializer(source="proyectoarea_set", many=True)
-    #proyecto_area = ProyectoSerializer(source="proyecto_set", many=True)
+class PruebaSerializer(serializers.ModelSerializer):
+    proyecto = EquiposSerializer(read_only=True)
 
     class Meta:
-        model = ProyectoArea
+        model = ProyectoEquiposFallas
+        fields = '__all__'
+
+
+class ProyectoEquiposFallasDetailsSerializer(serializers.ModelSerializer):
+    proyecto = ProyectoSerializer(read_only=True)
+    equipo = EquiposSerializer(read_only=True)
+    falla = FmecaSerializer(read_only=True)
+
+    class Meta:
+        model = ProyectoEquiposFallas
         fields = '__all__'

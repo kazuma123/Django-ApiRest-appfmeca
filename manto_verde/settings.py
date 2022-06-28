@@ -40,10 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'drf_yasg',
-    'area',
     'users',
-    'equipos',
-    'fmeca',
+    'equipo',
+    'falla',
     'proyecto',
     'equipos_completos',
     'maquina'

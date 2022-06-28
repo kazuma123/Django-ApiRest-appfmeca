@@ -18,9 +18,8 @@ from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-from fmeca.urls import fmeca_route
-from equipos.urls import equipo_route
-from area.urls import area_route
+from falla.urls import fmeca_route
+from equipo.urls import equipo_route
 from proyecto.urls import proyecto_route
 from equipos_completos.urls import equipos_completos_route
 from maquina.urls import maquina_route
@@ -48,9 +47,8 @@ urlpatterns = [
     path('api/', include(fmeca_route.urls)),
     path('api/', include(maquina_route.urls)),
     path('api/', include(equipo_route.urls)),
-    path('api/', include(area_route.urls)),
     path('api/', include(equipos_completos_route.urls)),
-    path('api/',include('equipos.urls')),
-    path('api/',include('maquina.urls'))
+    path('api/',include('maquina.urls')),
+    path('api/',include('proyecto.urls'))
 ]
 
