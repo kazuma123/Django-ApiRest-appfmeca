@@ -4,12 +4,7 @@ from proyecto.serializers import ProyectoSerializer, ProyectoEquiposFallasSerial
 from proyecto.models import Proyecto, ProyectoEquiposFallas
 from rest_framework.views import APIView
 from rest_framework.response import Response
-import MySQLdb
-import json
-import collections
-from django.core import serializers
-from django.http import HttpResponse
-from django.http import JsonResponse
+
 
 class ProyectoViewSet(ModelViewSet):
     #permission_classes = [IsAdminOrReadOnly]
