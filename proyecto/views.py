@@ -21,9 +21,7 @@ class ProyectoEquiposFallasViewSet(ModelViewSet):
 class ProyectoEquiposFallasDetailsApiView(APIView):
     def get(self, request, id=0):
         if id > 0:
-            queryset_machine = ProyectoEquiposFallas.objects.all()
+            queryset_machine = ProyectoEquiposFallas.objects.filter(proyecto_id=id)
 
-        print(queryset_machine.query)
         serializer_machine = ProyectoEquiposFallasDetailsSerializer(queryset_machine, many=True)
-
         return Response(serializer_machine.data)

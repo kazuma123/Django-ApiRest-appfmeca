@@ -11,6 +11,14 @@ class EquiposSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class EquiposOnlySerializer(serializers.ModelSerializer):
+    #fallas_equipo = FmecaSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Equipo
+        fields = '__all__'
+
+
 # class EquipoFmecaSerializer(serializers.ModelSerializer):
 #     #fallas_equipo = FmecaSerializer(many=True, read_only=True)
 #     #equipo_list = EquiposSerializer(many=True, read_only=True)

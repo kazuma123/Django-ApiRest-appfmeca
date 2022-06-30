@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from proyecto.models import Proyecto
 from proyecto.models import ProyectoEquiposFallas
-from equipo.serializers import EquiposSerializer
+from equipo.serializers import EquiposSerializer, EquiposOnlySerializer
 from falla.serializers import FmecaSerializer
 
 
@@ -28,9 +28,9 @@ class PruebaSerializer(serializers.ModelSerializer):
 
 
 class ProyectoEquiposFallasDetailsSerializer(serializers.ModelSerializer):
-    proyecto = ProyectoSerializer(read_only=True)
-    equipo = EquiposSerializer(read_only=True)
-    falla = FmecaSerializer(read_only=True)
+    proyecto_id = ProyectoSerializer(read_only=True)
+    equipo_id = EquiposOnlySerializer(read_only=True)
+    falla_id = FmecaSerializer(read_only=True)
 
     class Meta:
         model = ProyectoEquiposFallas
