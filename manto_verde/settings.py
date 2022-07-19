@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'falla',
     'proyecto',
     'equipos_completos',
-    'maquina'
+    'maquina',
+    'estrategia',
+    'especialidad',
+    'tiempo'
 ]
 
 REST_FRAMEWORK = {

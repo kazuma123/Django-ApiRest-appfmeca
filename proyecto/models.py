@@ -1,6 +1,6 @@
 from django.db import models
-from equipo.models import Equipo
 from falla.models import Falla
+from equipo.models import Equipo
 
 
 # Create your models here.

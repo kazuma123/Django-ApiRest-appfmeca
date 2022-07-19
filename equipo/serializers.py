@@ -12,7 +12,6 @@ class EquiposSerializer(serializers.ModelSerializer):
 
 
 class EquiposOnlySerializer(serializers.ModelSerializer):
-    #fallas_equipo = FmecaSerializer(many=True, read_only=True)
 
     class Meta:
         model = Equipo

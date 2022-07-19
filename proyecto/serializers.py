@@ -35,3 +35,11 @@ class ProyectoEquiposFallasDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProyectoEquiposFallas
         fields = '__all__'
+
+
+class ProyectoEquiposSerializer(serializers.ModelSerializer):
+    equipos_list = EquiposOnlySerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Proyecto
+        fields = '__all__'

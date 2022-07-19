@@ -23,6 +23,9 @@ from equipo.urls import equipo_route
 from proyecto.urls import proyecto_route
 from equipos_completos.urls import equipos_completos_route
 from maquina.urls import maquina_route
+from especialidad.urls import especialidad_route
+from estrategia.urls import estrategia_route
+from tiempo.urls import tiempo_route
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -48,6 +51,9 @@ urlpatterns = [
     path('api/', include(maquina_route.urls)),
     path('api/', include(equipo_route.urls)),
     path('api/', include(equipos_completos_route.urls)),
+    path('api/', include(especialidad_route.urls)),
+    path('api/', include(estrategia_route.urls)),
+    path('api/', include(tiempo_route.urls)),
     path('api/', include('maquina.urls')),
     path('api/', include('proyecto.urls'))
 
