@@ -103,6 +103,7 @@ WSGI_APPLICATION = 'manto_verde.wsgi.application'
 #     }
 # }
 
+# password postgres : 113aa05de72643d1e19fe7b4a735f6209255488e74dcbf1946376dc124345827
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
