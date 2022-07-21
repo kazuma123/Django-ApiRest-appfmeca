@@ -50,12 +50,13 @@ urlpatterns = [
     path('api/', include(fmeca_route.urls)),
     path('api/', include(maquina_route.urls)),
     path('api/', include(equipo_route.urls)),
-    path('api/', include(equipos_completos_route.urls)),
+    #path('api/', include(equipos_completos_route.urls)),
     path('api/', include(especialidad_route.urls)),
     path('api/', include(estrategia_route.urls)),
     path('api/', include(tiempo_route.urls)),
     path('api/', include('maquina.urls')),
-    path('api/', include('proyecto.urls'))
+    path('api/', include('proyecto.urls')),
+    #path('api/', include('falla.urls'))
 
 ]
 

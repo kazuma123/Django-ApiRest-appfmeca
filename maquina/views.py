@@ -19,7 +19,7 @@ class MaquinaViewSet(ModelViewSet):
 class MaquinasFallasDetails(APIView):
     def get(self, request, id=0):
         if id > 0:
-            #queryset_fmeca = FMeca.objects.filter(equipo=id).all()
+
             queryset_machine = Maquina.objects.filter(id=id).all()
         else:
             queryset_fmeca = Falla.objects.all()

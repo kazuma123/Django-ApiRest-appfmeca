@@ -20,3 +20,7 @@ class EquiposCompletos(models.Model):
 
     def __str__(self):
         return self.machine_type
+
+    class Meta:
+        db_table = 'equipo_completos'
+

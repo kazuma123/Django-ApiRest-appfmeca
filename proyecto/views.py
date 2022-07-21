@@ -14,7 +14,7 @@ class ProyectoViewSet(ModelViewSet):
 
 class ProyectoEquiposFallasViewSet(ModelViewSet):
     #permission_classes = [IsAdminOrReadOnly]
-    serializer_class = ProyectoEquiposFallasSerializer
+    serializer_class = ProyectoEquiposFallasDetailsSerializer
     queryset = ProyectoEquiposFallas.objects.all()
 
 

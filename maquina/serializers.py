@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from maquina.models import Maquina
 from falla.serializers import FmecaSerializer
-from falla.models import Falla
 
 
 class MaquinaSerializer(serializers.ModelSerializer):

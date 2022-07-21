@@ -13,8 +13,14 @@ class Proyecto(models.Model):
     def __str__(self):
         return self.nombre
 
+    class Meta:
+        db_table = 'proyecto'
+
 
 class ProyectoEquiposFallas(models.Model):
-    proyecto_id = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
-    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
-    falla_id = models.ForeignKey(Falla, on_delete=models.CASCADE)
+    proyecto_id = models.ForeignKey(Proyecto, on_delete=models.CASCADE, db_column="proyecto_id")
+    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE, db_column="equipo_id")
+    falla_id = models.ForeignKey(Falla, on_delete=models.CASCADE, db_column="falla_id")
+
+    class Meta:
+        db_table = 'proyecto_equipo_fallas'

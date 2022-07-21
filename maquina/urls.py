@@ -7,5 +7,5 @@ maquina_route = DefaultRouter()
 maquina_route.register(prefix='maquina', basename='maquina', viewset=MaquinaViewSet)
 
 urlpatterns = [
-    path('maquina_fallas_details/<int:id>',MaquinasFallasDetails.as_view(), name='maquina_fallas'),
+    path('list_especific_getAllFallasMachine/<int:id>',MaquinasFallasDetails.as_view(), name='maquina_fallas'),
 ]

@@ -8,6 +8,6 @@ proyecto_route.register(prefix='proyecto', basename='proyecto', viewset=Proyecto
 proyecto_route.register(prefix='proyecto_equipo', basename='proyecto_equipo', viewset=ProyectoEquiposFallasViewSet)
 
 urlpatterns = [
-    path('proyecto_equipo_fallas/<int:id>', ProyectoEquiposFallasDetailsApiView.as_view(), name='proyecto_equipo_fallas'),
+    path('list_especific_getAllProyectoEquipoFallas_ProyectoEspecifico/<int:id>', ProyectoEquiposFallasDetailsApiView.as_view(), name='proyecto_equipo_fallas'),
     path('list_especific_getAllEquiposProyectos/<int:id>', ProyectoEquiposDetailsApiView.as_view(), name='list_especific_getAllEquiposProyectos'),
 ]

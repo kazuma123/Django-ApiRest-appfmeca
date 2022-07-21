@@ -7,10 +7,11 @@ from tiempo.models import Tiempo
 
 # Create your models here.
 class Falla(models.Model):
-    maquina_id = models.ForeignKey(Maquina, on_delete=models.CASCADE, related_name="falla_list")
-    especialidad_id = models.ForeignKey(Especialidad, on_delete=models.CASCADE, related_name="especialidad_list")
-    medida_tiempo_id = models.ForeignKey(Tiempo, on_delete=models.CASCADE, related_name="tiempo_list")
-    estrategia_id = models.ForeignKey(Estrategia, on_delete=models.CASCADE, related_name="estrategia_list")
+    maquina_id = models.ForeignKey(Maquina, on_delete=models.CASCADE, related_name="falla_list", db_column='maquina_id')
+    especialidad_id = models.ForeignKey(Especialidad, on_delete=models.CASCADE, related_name="especialidad_list", db_column='especialidad_id')
+    medida_tiempo_id = models.ForeignKey(Tiempo, on_delete=models.CASCADE, related_name="tiempo_list", db_column='medida_tiempo_id')
+    estrategia_id = models.ForeignKey(Estrategia, on_delete=models.CASCADE, related_name="estrategia_list", db_column='estrategia_id')
+    medida_frecuencia_id = models.ForeignKey(Tiempo, on_delete=models.CASCADE, related_name="medida_list", db_column='medida_frecuencia_id')
     falla_funcional = models.CharField(max_length=255)
     modo_falla = models.CharField(max_length=255)
     causas = models.CharField(max_length=255)
@@ -22,13 +23,15 @@ class Falla(models.Model):
     tiempo = models.DateTimeField()
     personas = models.IntegerField()
     frecuencia = models.CharField(max_length=255)
-    medida_frecuencia_id = models.CharField(max_length=255)
     procedimiento_seguridad = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.efecto_modo_falla
+
+    class Meta:
+        db_table = 'falla_tarea'
 
 
 # class MaquinaFmeca(models.Model):

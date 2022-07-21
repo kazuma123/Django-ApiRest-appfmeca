@@ -28,9 +28,9 @@ class PruebaSerializer(serializers.ModelSerializer):
 
 
 class ProyectoEquiposFallasDetailsSerializer(serializers.ModelSerializer):
-    # proyecto_id = ProyectoSerializer(read_only=True)
-    # equipo_id = EquiposOnlySerializer(read_only=True)
-    # falla_id = FmecaSerializer(read_only=True)
+    proyecto = ProyectoSerializer(source="proyecto_id", read_only=True)
+    equipo = EquiposOnlySerializer(source="equipo_id", read_only=True)
+    falla = FmecaSerializer(source="falla_id", read_only=True)
 
     class Meta:
         model = ProyectoEquiposFallas
