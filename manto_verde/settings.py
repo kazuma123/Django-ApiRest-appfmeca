@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'maquina',
     'estrategia',
     'especialidad',
-    'tiempo'
+    'tiempo',
+    'tarea_secundaria'
 ]
 
 REST_FRAMEWORK = {
@@ -95,7 +96,7 @@ WSGI_APPLICATION = 'manto_verde.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'db_startapp',
+#         'NAME': 'db_python',
 #         'USER': 'root',
 #         'PASSWORD': '',
 #         'HOST': 'localhost',
