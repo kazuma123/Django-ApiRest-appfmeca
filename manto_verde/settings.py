@@ -49,7 +49,14 @@ INSTALLED_APPS = [
     'estrategia',
     'especialidad',
     'tiempo',
-    'tarea_secundaria'
+    'tarea_secundaria',
+    'aprobacion',
+    'clasificacion',
+    'evaluacion',
+    'identificacion',
+    'origen',
+    'seguimiento',
+    'status',
 ]
 
 REST_FRAMEWORK = {

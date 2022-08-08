@@ -28,6 +28,14 @@ from estrategia.urls import estrategia_route
 from tiempo.urls import tiempo_route
 from tarea_secundaria.urls import tarea_secundaria_route
 
+from aprobacion.urls import aprobacion_route
+from clasificacion.urls import clasificacion_route
+from evaluacion.urls import evaluacion_route
+from identificacion.urls import identificacion_route
+from origen.urls import origen_route
+from seguimiento.urls import seguimiento_route
+from status.urls import status_route
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Blog API",
@@ -59,6 +67,13 @@ urlpatterns = [
     path('api/', include('maquina.urls')),
     path('api/', include('proyecto.urls')),
     #path('api/', include('falla.urls'))
-
+    ####################################################
+    path('api/', include(aprobacion_route.urls)),
+    path('api/', include(clasificacion_route.urls)),
+    path('api/', include(evaluacion_route.urls)),
+    path('api/', include(identificacion_route.urls)),
+    path('api/', include(origen_route.urls)),
+    path('api/', include(seguimiento_route.urls)),
+    path('api/', include(status_route.urls)),
 ]
 
